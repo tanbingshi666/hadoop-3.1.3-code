@@ -1,0 +1,15 @@
+option java_package = "com.tan.hadoop.rpc.proto";
+option java_outer_classname = "ResourceTrackerMessage";
+option java_generic_services = true;
+option java_generate_equals_and_hash = true;
+
+message RequestProto{
+  required string hostname = 1;
+  required int32 cpu = 2;
+  required int32 memory = 3;
+}
+message ResponseProto{
+  required string flag = 1;
+}
+
+//    protoc.exe --java_out=./ ResourceTrackerMessage.proto

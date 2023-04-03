@@ -1,0 +1,12 @@
+option java_package = "com.tan.hadoop.rpc.proto";
+option java_outer_classname = "ResourceTracker";
+option java_generic_services = true;
+option java_generate_equals_and_hash = true;
+
+import "ResourceTrackerMessage.proto";
+
+service ResourceTrackerService {
+  rpc registerNodeManager(RequestProto) returns (ResponseProto);
+}
+
+// protoc.exe --java_out=./ ResourceTracker.proto
