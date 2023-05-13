@@ -1,3 +1,5 @@
+import org.apache.hadoop.fs.Path;
+
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.URI;
@@ -36,6 +38,17 @@ public class Test {
         System.out.println(URI.create("hdfs://mycluster:8020/mycluster").getPath());
 
         System.out.println(InetAddress.getLocalHost().getHostAddress());
+
+        Path path1 = new Path("/opt/app/LICENSE.txt");
+        Path path2 = new Path("./");
+        System.out.println(path2.getName());
+
+        System.out.println(path1.toUri().getPath());
+
+        Path path = new Path("/opt/app/LICENSE.txt");
+
+        System.out.println(path.isUriPathAbsolute());
+
     }
 
 }
